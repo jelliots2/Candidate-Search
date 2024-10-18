@@ -25,9 +25,10 @@ const CandidateSearch: React.FC = () => {
       const savedCandidates = JSON.parse(localStorage.getItem('savedCandidates') || '[]');
       const updatedCandidates = [...savedCandidates, candidate];
       localStorage.setItem('savedCandidates', JSON.stringify(updatedCandidates));
-      fetchCandidate();
+      navigate('/saved-candidates'); // Redirect to saved candidates page
     }
   };
+  
 
   const skipCandidate = () => {
     fetchCandidate();
